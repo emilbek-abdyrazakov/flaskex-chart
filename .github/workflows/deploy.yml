@@ -15,5 +15,5 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Check Helm
-        run: helm version
+      - name: Check Chart
+        run: ls
