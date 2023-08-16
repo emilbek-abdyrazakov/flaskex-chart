@@ -1,0 +1,4 @@
+replicas: 3
+image: ikambarov/flaskex
+tag: 45ab1e9
+serviceType: LoadBalancer
