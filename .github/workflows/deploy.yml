@@ -24,4 +24,4 @@ jobs:
           namespace:  default
 
       - name: Deploy App
-        run: helm install myflaskexapp . 
+        run: helm upgrade --install myflaskexapp . 
