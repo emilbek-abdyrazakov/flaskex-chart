@@ -16,8 +16,15 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Installing the app
-        run: helm install myflaskexapp .
+      - name: Setup KUBECONFIG
+        uses: vbem/kubeconfig4sa@v1
+        with:
+          server:     ${{ secrets.K8S_ADDRESS }}
+          ca-base64:  ${{ secrets.K8S_CA_BASE64 }}
+          token:      ${{ secrets.K8S_SA_TOKEN }}
+
+      - name: kubectl
+        run: kubectl get ns 
 
       # - name: Setup KUBECONFIG
       #   uses: vbem/kubeconfig4sa@v1
