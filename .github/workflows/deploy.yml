@@ -23,8 +23,8 @@ jobs:
           ca-base64:  ${{ secrets.K8S_CA_BASE64 }}
           token:      ${{ secrets.K8S_SA_TOKEN }}
 
-      - name: kubectl
-        run: kubectl pods -n default
+      # - name: kubectl
+      #   run: kubectl pods -n default
 
       # - name: Setup KUBECONFIG
       #   uses: vbem/kubeconfig4sa@v1
@@ -34,5 +34,5 @@ jobs:
       #     token:      ${{ secrets.K8S_SA_TOKEN }}
       #     namespace:  default
 
-      # - name: Deploy App
-      #   run: helm upgrade --install -f customvalues.yaml myflaskexapp . 
+      - name: Deploy App
+        run: helm upgrade --install -f customvalues.yaml myflaskexapp . 
