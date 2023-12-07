@@ -16,8 +16,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Check Helm
-        run: helm version
+      - name: Check chart
+        run: ls
 
       # - name: Setup KUBECONFIG
       #   uses: vbem/kubeconfig4sa@v1
