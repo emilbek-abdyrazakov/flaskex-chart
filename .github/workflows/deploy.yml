@@ -16,8 +16,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Check chart
-        run: ls
+      - name: Installing the app
+        run: helm install myflaskexapp .
 
       # - name: Setup KUBECONFIG
       #   uses: vbem/kubeconfig4sa@v1
