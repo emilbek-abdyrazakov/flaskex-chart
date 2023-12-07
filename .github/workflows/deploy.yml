@@ -16,13 +16,16 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Setup KUBECONFIG
-        uses: vbem/kubeconfig4sa@v1
-        with:
-          server:     ${{ secrets.K8S_ADDRESS }}
-          ca-base64:  ${{ secrets.K8S_CA_BASE64 }}
-          token:      ${{ secrets.K8S_SA_TOKEN }}
-          namespace:  default
+      - name: Check Helm
+        run: helm version
 
-      - name: Deploy App
-        run: helm upgrade --install -f customvalues.yaml myflaskexapp . 
+      # - name: Setup KUBECONFIG
+      #   uses: vbem/kubeconfig4sa@v1
+      #   with:
+      #     server:     ${{ secrets.K8S_ADDRESS }}
+      #     ca-base64:  ${{ secrets.K8S_CA_BASE64 }}
+      #     token:      ${{ secrets.K8S_SA_TOKEN }}
+      #     namespace:  default
+
+      # - name: Deploy App
+      #   run: helm upgrade --install -f customvalues.yaml myflaskexapp . 
