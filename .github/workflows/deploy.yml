@@ -24,7 +24,7 @@ jobs:
           token:      ${{ secrets.K8S_SA_TOKEN }}
 
       - name: kubectl
-        run: kubectl get ns 
+        run: kubectl pods -n default
 
       # - name: Setup KUBECONFIG
       #   uses: vbem/kubeconfig4sa@v1
